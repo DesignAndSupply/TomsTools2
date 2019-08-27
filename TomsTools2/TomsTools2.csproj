@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>TomsTools2</RootNamespace>
     <AssemblyName>TomsTools2</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -24,11 +24,12 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\designsvr1\apps\Design and Supply CSharp\MiniApps\TomsTools\</InstallUrl>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -80,11 +81,36 @@
   <ItemGroup>
     <Compile Include="ClassLibs\ConnectionStrings.cs" />
     <Compile Include="ClassLibs\Door.cs" />
+    <Compile Include="ClassLibs\user.cs" />
+    <Compile Include="frmCameraUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCameraUpload.Designer.cs">
+      <DependentUpon>frmCameraUpload.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCorrectStuckPunchJob.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCorrectStuckPunchJob.Designer.cs">
       <DependentUpon>frmCorrectStuckPunchJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRemoveStuckBuffJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRemoveStuckBuffJob.Designer.cs">
+      <DependentUpon>frmRemoveStuckBuffJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSqlAnywhere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSqlAnywhere.Designer.cs">
+      <DependentUpon>frmSqlAnywhere.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStockPriceUpdate.cs">
       <SubType>Form</SubType>
@@ -105,8 +131,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCameraUpload.resx">
+      <DependentUpon>frmCameraUpload.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCorrectStuckPunchJob.resx">
       <DependentUpon>frmCorrectStuckPunchJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRemoveStuckBuffJob.resx">
+      <DependentUpon>frmRemoveStuckBuffJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSqlAnywhere.resx">
+      <DependentUpon>frmSqlAnywhere.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStockPriceUpdate.resx">
       <DependentUpon>frmStockPriceUpdate.cs</DependentUpon>
@@ -122,6 +160,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="order_databaseDataSet.xsc">
       <DependentUpon>order_databaseDataSet.xsd</DependentUpon>

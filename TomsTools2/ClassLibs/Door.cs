@@ -20,6 +20,27 @@ namespace TomsTools2.ClassLibs
             
         }
 
+
+        public bool isValid()
+        {
+            SqlConnection conn = new SqlConnection(ConnectionStrings.ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("Select id from dbo.door where id=@doorID", conn);
+            cmd.Parameters.AddWithValue("@doorID", _doorID);
+            SqlDataReader rdr = cmd.ExecuteReader();
+
+            if (rdr.Read())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         public void GetDoorData()
         {
             SqlConnection conn = new SqlConnection(ConnectionStrings.ConnectionString);
@@ -34,8 +55,37 @@ namespace TomsTools2.ClassLibs
             {
 
             }
-
+            rdr.Close();
             conn.Close();
+
+        }
+
+        public bool isPunched()
+        {
+            SqlConnection conn = new SqlConnection(ConnectionStrings.ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT complete_punch from dbo.door where id = @doorID", conn);
+            cmd.Parameters.AddWithValue("@doorID", _doorID);
+
+            SqlDataReader rdr = cmd.ExecuteReader();
+
+            if (rdr.Read())
+            {
+                if (Convert.ToBoolean(rdr["complete_punch"].ToString()) == true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
 
         }
 
