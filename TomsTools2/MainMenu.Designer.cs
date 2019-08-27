@@ -34,8 +34,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnCameraUpload = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_amend_list = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -92,8 +93,19 @@
             this.groupBox1.Text = "Office Tools:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(120, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 41);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "sqlAnywhere";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn_amend_list);
             this.groupBox2.Controls.Add(this.btnCameraUpload);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnCompletePunch);
@@ -104,15 +116,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Shop Floor Tools:";
             // 
-            // button2
+            // btn_amend_list
             // 
-            this.button2.Location = new System.Drawing.Point(120, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 41);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "sqlAnywhere";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_amend_list.Location = new System.Drawing.Point(348, 19);
+            this.btn_amend_list.Name = "btn_amend_list";
+            this.btn_amend_list.Size = new System.Drawing.Size(108, 41);
+            this.btn_amend_list.TabIndex = 6;
+            this.btn_amend_list.Text = "ryucxd";
+            this.btn_amend_list.UseVisualStyleBackColor = true;
+            this.btn_amend_list.Click += new System.EventHandler(this.Btn_amend_list_Click);
             // 
             // MainMenu
             // 
@@ -125,6 +137,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tom\'s Tool Box";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.groupBox1.ResumeLayout(false);
@@ -142,6 +155,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_amend_list;
     }
 }
 
