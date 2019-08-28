@@ -32,13 +32,15 @@
             this.rd_weld = new System.Windows.Forms.RadioButton();
             this.rd_pack = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txt_filter = new System.Windows.Forms.TextBox();
+            this.btn_updateDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // rd_buff
             // 
             this.rd_buff.AutoSize = true;
-            this.rd_buff.Location = new System.Drawing.Point(256, 12);
+            this.rd_buff.Location = new System.Drawing.Point(154, 10);
             this.rd_buff.Name = "rd_buff";
             this.rd_buff.Size = new System.Drawing.Size(58, 17);
             this.rd_buff.TabIndex = 0;
@@ -50,7 +52,7 @@
             // rd_weld
             // 
             this.rd_weld.AutoSize = true;
-            this.rd_weld.Location = new System.Drawing.Point(344, 12);
+            this.rd_weld.Location = new System.Drawing.Point(242, 10);
             this.rd_weld.Name = "rd_weld";
             this.rd_weld.Size = new System.Drawing.Size(64, 17);
             this.rd_weld.TabIndex = 1;
@@ -62,7 +64,7 @@
             // rd_pack
             // 
             this.rd_pack.AutoSize = true;
-            this.rd_pack.Location = new System.Drawing.Point(438, 12);
+            this.rd_pack.Location = new System.Drawing.Point(336, 10);
             this.rd_pack.Name = "rd_pack";
             this.rd_pack.Size = new System.Drawing.Size(64, 17);
             this.rd_pack.TabIndex = 2;
@@ -73,17 +75,45 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 35);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(735, 387);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1_DoubleClick);
+            // 
+            // txt_filter
+            // 
+            this.txt_filter.Location = new System.Drawing.Point(12, 9);
+            this.txt_filter.Name = "txt_filter";
+            this.txt_filter.Size = new System.Drawing.Size(119, 20);
+            this.txt_filter.TabIndex = 5;
+            this.txt_filter.TextChanged += new System.EventHandler(this.Txt_filter_TextChanged);
+            this.txt_filter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_filter_KeyPress);
+            // 
+            // btn_updateDelete
+            // 
+            this.btn_updateDelete.Location = new System.Drawing.Point(406, 6);
+            this.btn_updateDelete.Name = "btn_updateDelete";
+            this.btn_updateDelete.Size = new System.Drawing.Size(87, 23);
+            this.btn_updateDelete.TabIndex = 6;
+            this.btn_updateDelete.Text = "Delete/Update";
+            this.btn_updateDelete.UseVisualStyleBackColor = true;
+            this.btn_updateDelete.Click += new System.EventHandler(this.Btn_updateDelete_Click);
             // 
             // frmAmendDoors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 434);
+            this.Controls.Add(this.btn_updateDelete);
+            this.Controls.Add(this.txt_filter);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.rd_pack);
             this.Controls.Add(this.rd_weld);
@@ -103,5 +133,7 @@
         private System.Windows.Forms.RadioButton rd_weld;
         private System.Windows.Forms.RadioButton rd_pack;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txt_filter;
+        private System.Windows.Forms.Button btn_updateDelete;
     }
 }
