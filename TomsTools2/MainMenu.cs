@@ -109,5 +109,19 @@ namespace TomsTools2
                 MessageBox.Show("Insufficient permissions", "Nope!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Btn_amend_list_Click(object sender, EventArgs e)
+        {
+            if (_permissionLevel == 1 || _permissionLevel == 2 || _permissionLevel == 3 || _permissionLevel == 4 || _permissionLevel == 7 || _permissionLevel == 10)
+            {
+                frmAmendDoors frmAD = new frmAmendDoors();
+                frmAD.Show();
+            }
+            else
+            {
+                MessageBox.Show("Insufficient permissions", "Nope!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }
