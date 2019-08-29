@@ -40,6 +40,11 @@ namespace TomsTools2
 
         private void loadData()
         {
+            if (dataGridView1.DataSource != null)
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.Rows.Clear();
+            }
             //set sql here 
             string sql = "SELECT a.door_id, department,staff_id, operation_date FROM dbo.door_allocation a " +
                 "LEFT JOIN dbo.door b ON a.door_id = b.id ";
@@ -133,11 +138,11 @@ namespace TomsTools2
                             sqlUPDATE = sqlUPDATE + "SET weld_staff_allocation = NULL WHERE id = " + dataGridView1.Rows[i].Cells[0].Value.ToString();
                             using (SqlCommand cmd = new SqlCommand(sqlDELETE, conn))
                             {
-                                //cmd.ExecuteNonQuery();
+                                cmd.ExecuteNonQuery();
                             }
                             using (SqlCommand cmd = new SqlCommand(sqlUPDATE, conn))
                             {
-                                //cmd.ExecuteNonQuery();
+                                cmd.ExecuteNonQuery();
                             }
                         }
                         if (dataGridView1.Rows[i].Cells[1].Value.ToString() == "Buffing")
@@ -146,11 +151,11 @@ namespace TomsTools2
                             sqlUPDATE = sqlUPDATE + "SET buff_staff_allocation = NULL WHERE id = " + dataGridView1.Rows[i].Cells[0].Value.ToString();
                             using (SqlCommand cmd = new SqlCommand(sqlDELETE, conn))
                             {
-                                //cmd.ExecuteNonQuery();
+                                cmd.ExecuteNonQuery();
                             }
                             using (SqlCommand cmd = new SqlCommand(sqlUPDATE, conn))
                             {
-                                //cmd.ExecuteNonQuery();
+                                cmd.ExecuteNonQuery();
                             }
                         }
                         if (dataGridView1.Rows[i].Cells[1].Value.ToString() == "Packing")
@@ -159,17 +164,19 @@ namespace TomsTools2
                             sqlUPDATE = sqlUPDATE + "SET pack_staff_allocation = NULL WHERE id = " + dataGridView1.Rows[i].Cells[0].Value.ToString();
                             using (SqlCommand cmd = new SqlCommand(sqlDELETE, conn))
                             {
-                                //cmd.ExecuteNonQuery();
+                                cmd.ExecuteNonQuery();
                             }
                             using (SqlCommand cmd = new SqlCommand(sqlUPDATE, conn))
                             {
-                                //cmd.ExecuteNonQuery();
+                               cmd.ExecuteNonQuery();
                             }
                         }
+                        
                     }
-                    MessageBox.Show(sqlUPDATE + "---------" + sqlDELETE);
                 }
                 conn.Close();
+                MessageBox.Show("success!");
+                loadData();
             }
         }
     }

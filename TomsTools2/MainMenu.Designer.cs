@@ -122,7 +122,7 @@
             this.btn_amend_list.Name = "btn_amend_list";
             this.btn_amend_list.Size = new System.Drawing.Size(108, 41);
             this.btn_amend_list.TabIndex = 6;
-            this.btn_amend_list.Text = "ryucxd";
+            this.btn_amend_list.Text = "Remove Stuck Doors";
             this.btn_amend_list.UseVisualStyleBackColor = true;
             this.btn_amend_list.Click += new System.EventHandler(this.Btn_amend_list_Click);
             // 

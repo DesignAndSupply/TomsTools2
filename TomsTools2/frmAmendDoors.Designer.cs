@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAmendDoors));
             this.rd_buff = new System.Windows.Forms.RadioButton();
             this.rd_weld = new System.Windows.Forms.RadioButton();
             this.rd_pack = new System.Windows.Forms.RadioButton();
@@ -118,9 +119,10 @@
             this.Controls.Add(this.rd_pack);
             this.Controls.Add(this.rd_weld);
             this.Controls.Add(this.rd_buff);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAmendDoors";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "form_amend_doors";
+            this.Text = "Remove Stuck Doors ";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
